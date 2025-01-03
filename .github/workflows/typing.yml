@@ -1,0 +1,23 @@
+name: Typing Text
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  typing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Sources
+        uses: actions/checkout@v4
+      - name: Use Typing
+        uses: supersigma453/svg-typing-text@main
+        with:
+          text: |
+            "Welcome to my Profile!"
+            "Enjoy reading!"
+            "Have fun!"
+            "Check out my Projects!"
+          font-size: 40
